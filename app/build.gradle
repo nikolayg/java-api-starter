@@ -28,13 +28,16 @@ dependencies {
     // Mockito
     testImplementation 'org.mockito:mockito-inline:5.2.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.2.0'
+    // Javalin test utility
+    testImplementation 'io.javalin:javalin-testtools:5.6.1'
 
     // Javalin Web Server
-    implementation 'io.javalin:javalin-bundle:5.6.1'
+    // implementation 'io.javalin:javalin-bundle:5.6.1'
+    implementation "io.javalin:javalin:5.6.1"
     // Allows Javalin to parse for create JSON
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
     // To read vars from .env file or environment
-    // implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
 }
 
 application {
@@ -81,24 +84,24 @@ jar {
 }
 
 // Based on https://github.com/diffplug/spotless/tree/main/plugin-gradle
-spotless {
-  format 'misc', {
-    // define the files to apply `misc` to
-    target '*.gradle', '*.md', '.gitignore'
+ spotless {
+   format 'misc', {
+     // define the files to apply `misc` to
+     target '*.gradle', '*.md', '.gitignore'
 
-    // define the steps to apply to those files
-    trimTrailingWhitespace()
-    // or tabs/spaces. Takes an integer argument if you don't like 4
-    indentWithSpaces()
-    endWithNewline()
-  }
-  java {
-    // apply a specific flavor of google-java-format
-    googleJavaFormat('1.17.0').aosp().reflowLongStrings()
-    // fix formatting of type annotations
-    formatAnnotations()
-  }
-}
+     // define the steps to apply to those files
+     trimTrailingWhitespace()
+     // or tabs/spaces. Takes an integer argument if you don't like 4
+     indentWithSpaces()
+     endWithNewline()
+   }
+   java {
+     // apply a specific flavor of google-java-format
+     googleJavaFormat('1.17.0').aosp().reflowLongStrings()
+     // fix formatting of type annotations
+     formatAnnotations()
+   }
+ }
 
 // https://github.com/spotbugs/spotbugs-gradle-plugin
 // Extensions - https://spotbugs-gradle-plugin.netlify.app/com/github/spotbugs/snom/spotbugsextension

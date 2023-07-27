@@ -1,0 +1,44 @@
+# Editors
+/.idea
+/.vscode
+# Binaries
+/.gradle
+/app/build
+/app/bin
+/build
+# Config
+/app/.env
+# GIT
+/.git
+.gitignore
+.gitattributes
+# Log files
+logs
+*.log
+# Runtime data
+pids
+*.pid
+*.seed
+# eBook & documentation
+_book
+*.epub
+*.mobi
+*.pdf
+*.md
+*.MD
+# Documentation
+README.md
+README.MD
+# Temp files
+*~
+*.swp
+*.swo
+# Misc.
+.env
+.DS_Store
+Dockerfile
+Worker.Dockerfile
+.dockerignore
+.editorconfig
+.lintstagedrc
+

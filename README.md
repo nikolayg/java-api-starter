@@ -60,3 +60,36 @@ java -jar ./app/build/libs/app.jar
 
 ./gradlew dependencyCheckAnalyze
 ```
+
+
+# Docker
+
+```bash
+docker build . -t java-api-starter
+
+# If you need to clear the old Docker caches (debug purposes)
+docker build . --no-cache -t java-api-starter
+```
+
+If you want to debug the production build:
+
+```bash
+# Replace 9090 with the PORT from .env
+# Will open a shell terminal
+docker run \
+  -p 9090:9090 \
+  --env-file=./app/.env \
+  -it java-api-starter \
+  /bin/sh
+```
+
+To run the production docker image locally:
+
+```bash
+# Replace 9090 with the PORT from .env
+# Visit http://localhost:9090/api/health
+docker run \
+  -p 9090:9090 \
+  --env-file=./app/.env \
+  java-api-starter
+```
