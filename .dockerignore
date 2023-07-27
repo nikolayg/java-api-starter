@@ -37,7 +37,6 @@ README.MD
 .env
 .DS_Store
 Dockerfile
-Worker.Dockerfile
 .dockerignore
 .editorconfig
 .lintstagedrc
